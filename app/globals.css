@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+@layer base {
+
+  @font-face {
+    font-family: "DM bold";
+    src: url("../public/fonts/DM-bold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "DM regular";
+    src: url("../public/fonts/DM-regular.woff2") format("woff2");
+  }
+
+  @font-face {
+  font-family: "DM semi";
+  src: url("../public/fonts/DM-semi.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Neue";
+    src: url("../public/fonts/PepeNeue.woff2") format("woff2");
+  }
+
+}
+
+@theme {
+  --font-DMbold: "DM bold", sans-serif;
+}
+
+@theme {
+  --font-DMregular: "DM regular", sans-serif;
+}
+
+@theme {
+  --font-DMsemi: "DM semi", sans-serif;
+}
+
+@theme {
+  --font-Neue: "Neue", sans-serif;
+}
+
+/* Lenis base */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

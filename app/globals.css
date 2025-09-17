@@ -18,8 +18,28 @@
   }
 
   @font-face {
+    font-family: "MonoRegular";
+    src: url("../public/fonts/MonoRegular.woff2") format("woff2");
+  }
+
+  @font-face {
     font-family: "Neue";
     src: url("../public/fonts/PepeNeue.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "SequelSans";
+    src: url("../public/fonts/SequelSans.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "SequelSansBody";
+    src: url("../public/fonts/SequelSansBody.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "SequelSansMedium";
+    src: url("../public/fonts/SequelSansMedium.woff2") format("woff2");
   }
 
 }
@@ -39,6 +59,20 @@
 @theme {
   --font-Neue: "Neue", sans-serif;
 }
+
+@theme {
+  --font-MonoRegular: "MonoRegular", monospace;
+}
+@theme {
+  --font-SequelSans: "SequelSans", sans-serif;
+}
+@theme {
+  --font-SequelSansBody: "SequelSansBody", sans-serif;
+}
+@theme {
+  --font-SequelSansMedium: "SequelSansMedium", sans-serif;
+}
+
 
 /* Lenis base */
 html.lenis {

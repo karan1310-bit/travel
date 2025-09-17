@@ -56,7 +56,7 @@ export default function Hero() {
       </header>
 
       {/* Hero Content */}
-      <div className="relative flex flex-col justify-end h-full pb-8 md:pb-12 px-6 lg:px-12">
+      <div className="relative flex flex-col justify-end h-full pb-8 md:pb-10 px-4 lg:px-12">
         <div className="flex flex-wrap">
           {["Your", "Journey", "Our", "Wheels"].map((word, idx) => (
             <span
@@ -86,7 +86,7 @@ export default function Hero() {
   ].map((word, idx) => (
     <span
       key={idx}
-      className="bg-white text-black text-sm sm:text-base lg:text-xl font-semibold px-2 md:px-3 py-1 border border-gray-600 mb-1 mr-0"
+      className=" text-white text-base sm:text-base lg:text-xl font-SequelSansBody px-1 py-0 mb-0 mr-0"
     >
       {word}
     </span>
@@ -110,14 +110,14 @@ export default function Hero() {
   ].map((word, idx) => (
     <span
       key={idx}
-      className="bg-white text-black text-sm sm:text-base lg:text-xl font-semibold px-3 py-1 border border-black mb-1 mr-0"
+      className="text-white text-sm sm:text-base lg:text-xl font-SequelSansBody px-1 py-0 mb-1 mr-0"
     >
       {word}
     </span>
   ))}
 </div>
 
-<button className="px-2 md:px-4 py-1 md:py-3 mt-1 md:mt-2 text-md md:text-xl bg-white font-bold flex w-fit items-center gap-2">
+<button className="px-2 md:px-4 py-1 md:py-3 mt-3 md:mt-2 text-md md:text-xl bg-white font-bold flex w-fit items-center gap-2">
             CALL US <span>→</span>
           </button>
 

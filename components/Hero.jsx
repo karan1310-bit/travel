@@ -1,114 +1,126 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
 
-/**
- * Travelers — exact hero layout (no overlap)
- * - Grid uses 5fr / 6fr / 2fr on lg+ so the right rail has enough width
- * - Big image is tall-ish; small image sits in its own column, centered
- * - Add your images to /public/images
- *    /images/hero-main.jpg  (landscape-portrait ~ 5:6)
- *    /images/hero-thumb.jpg (square)
- */
 export default function Hero() {
   return (
-    <section className="w-full h-screen">
-      <div className="px-4 sm:px-6 lg:px-12 xl:px-12 py-8 sm:py-10 font-Neue">
-        {/* Top bar */}
-        <header className="mb-8 sm:mb-12 flex items-center justify-between">
-          <span className="text-sm font-semibold tracking-tight">Gaurav Travels.</span>
+    <section className="relative w-full h-screen overflow-hidden font-SequelSans">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/6.jpg" // replace with actual image path
+          alt="Drake Motor Inn"
+          fill
+          priority
+          className="object-cover object-center md:object-bottom"
+        />
+      </div>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
-            <span className="hidden md:inline">About Us</span>
-
-            {/* search icon */}
-            <button aria-label="Search" className="relative size-5">
-              <span className="absolute inset-0 rounded-full border border-gray-500/70" />
-              <span className="absolute -bottom-[3px] right-[1px] h-2 w-[1px] rotate-45 bg-gray-500/80" />
-            </button>
-
-            {/* hamburger */}
-            <button aria-label="Menu" className="relative h-5 w-6">
-              <span className="absolute left-0 top-[6px] h-[2px] w-6 bg-gray-700" />
-              <span className="absolute left-0 top-[14px] h-[2px] w-6 bg-gray-700" />
-            </button>
-          </div>
-        </header>
-
-        {/* Main grid: single column on mobile; 5/6/2 fr on lg+ */}
-        <div className="grid grid-cols-1 lg:grid-cols-[5fr_6fr_2fr] gap-10 lg:gap-14 items-start">
-          {/* LEFT — copy */}
-          <article>
-
-            <h1 className="mb-6 mt-16 font-extrabold tracking-normal font-Neue leading-[1.06] text-[clamp(30px,6vw,64px)]">
-              Getting Cheap
-              <br /> Airfare for Last
-              <br /> Minute Travel
-            </h1>
-
-            <p className="text-[13px] sm:text-[15px] text-gray-600 font-medium mb-8">
-              The Awesome Tips for Your Perfect Trip.
-            </p>
-
-            <div className="w-10 h-[2px] bg-gray-300 mb-8" />
-
-            <p className="text-[12.5px] sm:text-sm leading-6 text-gray-500 max-w-[440px] mb-10">
-              Tremblant is based in Canada and has over 90 runs servicing millions of skiers
-              each year. With 13 state-of-the-art ski lifts and a selection of choices for
-              both snowboarders.
-            </p>
-
-            <button
-              type="button"
-              className="inline-flex items-center justify-center px-9 py-4 bg-[#0E0E0E] text-white
-                         text-[12px] sm:text-[13px] tracking-wider rounded-sm hover:opacity-90 transition"
-            >
-              LEARN MORE
-            </button>
-          </article>
-
-          {/* CENTER — big image + labels */}
-          <div className="flex flex-col">
-            {/* Tall-ish hero image (fill inside a fixed aspect box) */}
-            <div
-    className="
-      relative mx-auto w-full
-      max-w-[360px] sm:max-w-[400px] lg:max-w-[360px] xl:max-w-[360px]
-      aspect-[9/16]   /* phone-like frame */
-      overflow-hidden rounded-md
-    "
-  >
-    <Image
-      src="/images/1.png"
-      alt="Traveler running in wheat field"
-      fill
-      sizes="(min-width:1280px) 360px, (min-width:1024px) 360px, (min-width:640px) 400px, 360px"
-      className="object-contain"  /* never exceeds the frame */
-      priority
-    />
-  </div>
-
-
-          </div>
-
-          {/* RIGHT — small square + pager; its own (wider) column so no overlap */}
-          <aside className="flex flex-col items-end justify-center">
-            {/* keep image within column; cap the size for nice proportion */}
-            <div className="relative w-full max-w-[220px] aspect-square ml-auto mt-28">
-              <Image
-                src="/images/1.png"
-                alt="Aerial tropical coast"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="mt-6 text-right w-full pr-1 text-[11px] sm:text-xs text-gray-500">
-              1 . 4
-            </div>
-          </aside>
+      {/* Header Navbar */}
+      <header className="absolute top-0 left-0 w-full flex justify-between items-center px-4 lg:px-8 py-4 z-20">
+        {/* Left Side */}
+        <div className="flex items-center flex-wrap gap-1">
+          <div className="flex">
+            {["Gaurav", "Travels"].map((word, idx) => (
+              <span
+                key={idx}
+                className="px-2 md:px-4 py-1 md:py-3 border border-black bg-white font-bold text-lg lg:text-2xl tracking-tight"
+              >
+      {word}
+    </span>
+  ))}
+</div>
+         
+          <nav className="hidden md:flex bg-white">
+            {["ABOUT", "SERVICES", "PACKAGES", "TESTIMONIALS", "CONTACT US"].map(
+              (item, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="px-4 py-3 border-r last:border-r-0 border-black text-sm font-bold"
+                >
+                  {item}
+                </a>
+              )
+            )}
+          </nav>
         </div>
+
+        {/* Right Side */}
+        <div className="flex items-center border border-black w-fit">
+     
+          <button className="px-2 md:px-4 py-1 md:py-3 text-sm md:text-sm bg-white font-bold flex items-center gap-2">
+            CALL US <span>→</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Content */}
+      <div className="relative flex flex-col justify-end h-full pb-8 md:pb-12 px-6 lg:px-12">
+        <div className="flex flex-wrap">
+          {["Your", "Journey", "Our", "Wheels"].map((word, idx) => (
+            <span
+              key={idx}
+              className="bg-white text-black text-3xl sm:text-4xl lg:text-5xl font-bold px-2 md:px-4 py-1 md:py-3 border border-black mb-1"
+            >
+              {word}
+            </span>
+          ))}
+        </div>
+
+        {/* Subline 1 (12 words) */}
+<div className="flex flex-wrap mt-1 md:mt-3">
+  {[
+    "Premium",
+    "cars,",
+    "tempo",
+    "travellers,",
+    "and",
+    "AC",
+    "buses",
+    "providing",
+    "comfortable,",
+    "safe,",
+    "reliable",
+    "solutions.",
+  ].map((word, idx) => (
+    <span
+      key={idx}
+      className="bg-white text-black text-sm sm:text-base lg:text-xl font-semibold px-2 md:px-3 py-1 border border-gray-600 mb-1 mr-0"
+    >
+      {word}
+    </span>
+  ))}
+</div>
+
+{/* Subline 2 (11 words) */}
+<div className="hidden md:flex flex-wrap">
+  {[
+    "Group",
+    "tours,",
+    "52-seater",
+    "coaches,",
+    "and",
+    "customized",
+    "pilgrimage",
+    "packages",
+    "for",
+    "every",
+    "journey.",
+  ].map((word, idx) => (
+    <span
+      key={idx}
+      className="bg-white text-black text-sm sm:text-base lg:text-xl font-semibold px-3 py-1 border border-black mb-1 mr-0"
+    >
+      {word}
+    </span>
+  ))}
+</div>
+
+<button className="px-2 md:px-4 py-1 md:py-3 mt-1 md:mt-2 text-md md:text-xl bg-white font-bold flex w-fit items-center gap-2">
+            CALL US <span>→</span>
+          </button>
+
       </div>
     </section>
   );

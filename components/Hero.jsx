@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/6.jpg" // replace with actual image path
+          src="/hero/4.png" // replace with actual image path
           alt="Drake Motor Inn"
           fill
           priority
@@ -21,7 +21,7 @@ export default function Hero() {
         {/* Left Side */}
         <div className="flex items-center flex-wrap gap-1">
           <div className="flex">
-            {["Gaurav", "Travels"].map((word, idx) => (
+            {["GAURAV", "TRAVELS"].map((word, idx) => (
               <span
                 key={idx}
                 className="px-2 md:px-4 py-1 md:py-3 border border-black bg-white font-bold text-lg lg:text-2xl tracking-tight"
@@ -61,64 +61,24 @@ export default function Hero() {
           {["Your", "Journey", "Our", "Wheels"].map((word, idx) => (
             <span
               key={idx}
-              className="bg-white text-black text-3xl sm:text-4xl lg:text-5xl font-bold px-2 md:px-4 py-1 md:py-3 border border-black mb-1"
+              className="bg-white text-black text-3xl sm:text-4xl lg:text-4xl font-bold px-2 md:px-4 py-1 md:py-3 border border-black"
             >
               {word}
             </span>
           ))}
         </div>
 
-        {/* Subline 1 (12 words) */}
-<div className="flex flex-wrap mt-1 md:mt-3">
-  {[
-    "Premium",
-    "cars,",
-    "tempo",
-    "travellers,",
-    "and",
-    "AC",
-    "buses",
-    "providing",
-    "comfortable,",
-    "safe,",
-    "reliable",
-    "solutions.",
-  ].map((word, idx) => (
-    <span
-      key={idx}
-      className=" text-white text-base sm:text-base lg:text-xl font-SequelSansBody px-1 py-0 mb-0 mr-0"
-    >
-      {word}
-    </span>
-  ))}
-</div>
+        <p className="text-white text-base leading-tight tracking-wider sm:text-base lg:text-2xl font-Neue mt-1 md:mt-2">
+  Premium cars, tempo travellers, and AC buses providing comfortable, safe, reliable solutions.
+</p>
 
 {/* Subline 2 (11 words) */}
-<div className="hidden md:flex flex-wrap">
-  {[
-    "Group",
-    "tours,",
-    "52-seater",
-    "coaches,",
-    "and",
-    "customized",
-    "pilgrimage",
-    "packages",
-    "for",
-    "every",
-    "journey.",
-  ].map((word, idx) => (
-    <span
-      key={idx}
-      className="text-white text-sm sm:text-base lg:text-xl font-SequelSansBody px-1 py-0 mb-1 mr-0"
-    >
-      {word}
-    </span>
-  ))}
-</div>
+<p className="hidden md:block text-white leading-tight tracking-wider text-sm sm:text-base lg:text-2xl font-Neue mb-2">
+  Group tours, 52-seater coaches, and customized pilgrimage packages for every journey.
+</p>
 
-<button className="px-2 md:px-4 py-1 md:py-3 mt-3 md:mt-2 text-md md:text-xl bg-white font-bold flex w-fit items-center gap-2">
-            CALL US <span>→</span>
+<button className="px-2 md:px-4 py-1 md:py-3 mt-2 md:mt-1 text-md md:text-xl bg-white font-bold flex w-fit items-center gap-2">
+            Get in touch
           </button>
 
       </div>
